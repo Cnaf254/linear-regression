@@ -20,8 +20,12 @@ update_taxi_df = chicago_taxi_dataset[['TRIP_MILES', 'TRIP_SECONDS', 'FARE', 'CO
 print("Read data set completed successfully.")
 print("Total number of rows: {0}\n\n".format(len(update_taxi_df.index)))
 
-print(update_taxi_df.head(10))
+# print(update_taxi_df.head(10))
 
 
 #view dataset statistics
-print(update_taxi_df.describe(include='all'))
+# print(update_taxi_df.describe(include='all'))
+
+sns.pairplot(update_taxi_df, x_vars=["FARE", "TRIP_MILES", "TRIP_SECONDS"], y_vars=["FARE", "TRIP_MILES", "TRIP_SECONDS"])
+
+plt.show()
